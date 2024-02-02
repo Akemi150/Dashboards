@@ -1,5 +1,6 @@
 from flask import Flask, render_template
-from flask_mysqldb import MySQL
+#from flask_mysqldb import MySQL
+from flaskext.mysql import MySQL
 
 
 app = Flask(__name__)
@@ -9,10 +10,10 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = ''
 mysql = MySQL()
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
+@app.route('/')
+def consulta():
+    return render_template('Consulta.html')
 
 
 if __name__ == '__main__':
